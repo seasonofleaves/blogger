@@ -1,10 +1,15 @@
 <script setup>
 import { Blog } from '@/models/Blogs.js';
+import { blogsService } from '@/services/BlogsService.js';
 
 
-defineProps({
+const props = defineProps({
   blogProp: { type: Blog, required: true}
 })
+
+function setActiveBlog(){
+  blogsService.setActiveBlog(props.blogProp)
+}
 
 </script>
 
@@ -16,7 +21,7 @@ defineProps({
         <div class="card-body">
           <h5 class="card-title">{{ blogProp.title }}</h5>
           <p class="card-text">{{ blogProp.body }}</p>
-          <button class="btn btn-primary">Read Post</button>
+          <button @click="setActiveBlog()" class="btn btn-primary">Read Post</button>
         </div>
         <img :src="blogProp.creator.picture" :alt="blogProp.creator.name" class="creator-img">
       </div>
