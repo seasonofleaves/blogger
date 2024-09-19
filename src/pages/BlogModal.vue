@@ -24,7 +24,7 @@ const blog = computed(() => AppState.activeBlog)
                 <img :src="projectImg" :alt="`Picture ${index + 1} of ${project.projectImgs.length}`"
                   class="img-fluid w-100">
               </div> -->
-              <img :src="blog.imgUrl" alt="">
+              <!-- <img :src="blog.imgUrl" alt=""> -->
               <div class="col-12 mb-3">
                 {{ blog.body }}
               </div>
