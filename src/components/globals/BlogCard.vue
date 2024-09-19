@@ -10,17 +10,32 @@ defineProps({
 
 
 <template>
-<div class="card">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="card">
+    <section class="row">
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ blogProp.title }}</h5>
+          <p class="card-text">{{ blogProp.body }}</p>
+          <button class="btn btn-primary">Read Post</button>
+        </div>
+        <img :src="blogProp.creator.picture" :alt="blogProp.creator.name" class="creator-img">
+      </div>
+      <div class="col-md-4">
+        <img :src="blogProp.imgUrl" class="card-img-top" alt="...">
+      </div>
+    </section>
   </div>
-</div>
 </template>
 
 
 <style lang="scss" scoped>
-
+.creator-img{
+  height: 15dvh;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+img{
+  object-fit: cover;
+  object-fit: center;
+}
 </style>
