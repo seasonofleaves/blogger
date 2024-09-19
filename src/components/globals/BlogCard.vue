@@ -21,7 +21,9 @@ function setActiveBlog(){
         <div class="card-body">
           <h5 class="card-title">{{ blogProp.title }}</h5>
           <p class="card-text">{{ blogProp.body }}</p>
-          <button @click="setActiveBlog()" class="btn btn-primary">Read Post</button>
+          <button @click="setActiveBlog()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#blogModal">
+            Read Post
+          </button>
         </div>
         <img :src="blogProp.creator.picture" :alt="blogProp.creator.name" class="creator-img">
       </div>

@@ -5,6 +5,7 @@ import { blogsService } from '@/services/BlogsService.js';
 import { logger } from '@/utils/Logger.js';
 import Pop from '@/utils/Pop.js';
 import { computed, onMounted } from 'vue';
+import BlogModal from './BlogModal.vue';
 
 const blogs = computed(() => AppState.blogs)
 
@@ -37,6 +38,7 @@ async function getAllBlogs(){
       </div>
     </section>
   </div>
+  <BlogModal/>
 </template>
 
 <style scoped lang="scss">
